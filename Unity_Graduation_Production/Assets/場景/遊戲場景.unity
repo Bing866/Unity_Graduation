@@ -3041,6 +3041,8 @@ GameObject:
   - component: {fileID: 221024788}
   - component: {fileID: 221024787}
   - component: {fileID: 221024786}
+  - component: {fileID: 221024791}
+  - component: {fileID: 221024790}
   m_Layer: 5
   m_Name: "\u756B\u5E03\u5C0D\u8A71\u7CFB\u7D71"
   m_TagString: Untagged
@@ -3130,6 +3132,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &221024790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221024785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107af3158642bda41ac879eff54895d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueIntervalTime: 0.1
+  dialogueOpening: {fileID: 11400000, guid: 0c04ac5bc7821e6449cfc8f6d0eb1d31, type: 2}
+--- !u!225 &221024791
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221024785}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &222519678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9467,11 +9495,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dialogue Content.Dialogue Content.Dialogue Content.Dialogue Content.Dialogue
-    Content.Dialogue Content.Dialogue Content.
+  m_text: "\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9\u5C0D\u8A71\u5167\u5BB9"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6a733aabfaf13e4f947f20263ab9529, type: 2}
+  m_sharedMaterial: {fileID: -2109198680045270130, guid: a6a733aabfaf13e4f947f20263ab9529, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -25843,10 +25870,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dialoguer
+  m_text: "\u5C0D\u8A71\u8005\u540D\u7A31"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6a733aabfaf13e4f947f20263ab9529, type: 2}
+  m_sharedMaterial: {fileID: -2109198680045270130, guid: a6a733aabfaf13e4f947f20263ab9529, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
