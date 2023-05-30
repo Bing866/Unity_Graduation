@@ -14,6 +14,8 @@ namespace BING
         private float dialogueIntervalTime = 0.1f;
         [SerializeField, Header("開頭對話")]
         private DialogueData dialogueOpening;
+        [SerializeField, Header("對話按鍵")]
+        private KeyCode dialogueKey = KeyCode.Space;
 
         private WaitForSeconds dialogueInterval => new WaitForSeconds(dialogueIntervalTime);
 
@@ -66,6 +68,14 @@ namespace BING
             }
 
             goTriangle.SetActive(true);
+
+            // 如果 玩家 還沒按下 指定按鍵 就等待
+            while (!Input.GetKeyDown(dialogueKey)) 
+            {
+                yield return null;
+            }
+
+            print("<color=#993300>玩家按下按鍵!</color>");
         }
     }
 }
