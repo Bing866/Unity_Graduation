@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using System.Collections;
 
 namespace BING
 {
@@ -30,7 +31,41 @@ namespace BING
             textContent = GameObject.Find("對話內容").GetComponent<TextMeshProUGUI>();
             goTriangle = GameObject.Find("對話完成圖示");
             goTriangle.SetActive(false);
+
+            StartCoroutine(FadeGroup());
+            StartCoroutine(TypeEffect());
         }
         #endregion
+
+        /// <summary>
+        /// 淡入淡出群組物件
+        /// </summary>
+        private IEnumerator FadeGroup() 
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                groupDialogue.alpha += 0.1f;
+                yield return new WaitForSeconds(0.05f);
+            }
+        }
+
+        /// <summary>
+        /// 打字效果
+        /// </summary>
+        private IEnumerator TypeEffect() 
+        {
+            textName.text = dialogueOpening.dialogueName;
+            textContent.text = "";
+
+            string dialogue = dialogueOpening.dialogueContent[1];
+
+            for (int i = 0; i < dialogue.Length; i++)
+            {
+                textContent.text += dialogue[i];
+                yield return dialogueInterval;
+            }
+
+            goTriangle.SetActive(true);
+        }
     }
 }
