@@ -4,58 +4,56 @@ using System.Collections;
 namespace BING
 {
     /// <summary>
-    /// 認識協同程序，簡稱協程 Coroutine
-    /// 目的讓程式停留或等待
+    /// 學習協同程序，簡稱協成 Coroutine
+    /// 目的:讓程式停留達到等待的效果
     /// </summary>
     public class LearnCoroutine : MonoBehaviour
     {
-        // 使用協同程序的條件
+        // 使用協同程序的三個條件
         // 1. 引用命名空間 System.Collections
         // 2. 定義一個傳回 IEnumerator 的方法
-        // 3.方法內必須使用 yield return 時間 停留
+        // 3. 方法內必須使用 yield return (等待)
         // 4. 使用 StartCoroutine 啟動
 
-        // 字串是一個 char 陣列
-        private string textDialogue = "我暈過去了嗎...?";
+        // 字串 string 為 char 陣列
+        private string testDialogue = "先出去再說";
 
         private void Awake()
         {
-            //StartCoroutine(Test());
+            // StartCoroutine(Test());
 
-            //print("第一個字:" + textDialogue[0]);
+            // print("取得測試對話的第一個字:" + tesDialogue[0]);
 
-            //StartCoroutine(ShowText());
+            // StartCoroutine(ShowDialgue());
 
-            StartCoroutine(ShowTextUseFor());
+            StartCoroutine(ShowDialogueUseFor());
         }
 
         private IEnumerator Test()
         {
-            print("<color=#ff3333>第一行</color>");
+            print("<color=#33ff33>第一行程式</color>");
             yield return new WaitForSeconds(2);
-            print("<color=#33ff33>第二行</color>");
-            yield return new WaitForSeconds(3.5f);
-            print("<color=#3333ff>第三行</color>");
+            print("<color=#ff3333>第二行程式</color>");
+            yield return new WaitForSeconds(3);
+            print("<color=#3333ff>第三行程式</color>");
         }
 
-        private IEnumerator ShowText()
+        private IEnumerator ShowDialogue()
         {
-            print(textDialogue[0]);
-            yield return new WaitForSeconds(0.2f);
-            print(textDialogue[1]);
-            yield return new WaitForSeconds(0.2f);
-            print(textDialogue[2]);
-            yield return new WaitForSeconds(0.2f);
-            print(textDialogue[3]);
-            yield return new WaitForSeconds(0.2f);
+            print(testDialogue[0]);
+            yield return new WaitForSeconds(0.1f);
+            print(testDialogue[1]);
+            yield return new WaitForSeconds(0.1f);
+            print(testDialogue[2]);
+            yield return new WaitForSeconds(0.1f);
         }
 
-        private IEnumerator ShowTextUseFor() 
+        private IEnumerator ShowDialogueUseFor()
         {
-            for (int i = 0; i < textDialogue.Length; i++)
+            for (int i = 0; i < testDialogue.Length; i++)
             {
-                print(textDialogue[i]);
-                yield return new WaitForSeconds(0.3f); 
+                print(testDialogue[i]);
+                yield return new WaitForSeconds(0.2f);
             }
         }
     }
