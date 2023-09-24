@@ -78,6 +78,33 @@ namespace BING
             }
         }
 
+        private void Update()
+        {
+            // 在螢幕中間創建一條射線
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+
+            RaycastHit hit;
+
+            // 檢查射線是否碰撞到物體
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Interactable")))
+            {
+                // 如果碰到的是可互動物件，顯示畫布
+                canvas.gameObject.SetActive(true);
+
+                // 如果按下了指定的按鍵
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    // 觸發對話的那段
+
+                }
+            }
+            else
+            {
+                // 如果沒有碰到可互動物件，隱藏畫布
+                canvas.gameObject.SetActive(false);
+            }
+        }
+
         // 碰撞開始 (剛體碰撞觸發)
         private void OnTriggerEnter(Collider other)
         {
