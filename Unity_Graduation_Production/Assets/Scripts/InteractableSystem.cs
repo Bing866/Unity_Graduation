@@ -86,8 +86,13 @@ namespace BING
             RaycastHit hit;
 
             // 檢查射線是否碰撞到物體
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Interactable")))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
+                
+                if (hit.collider.gameObject.tag.Contains("Interactable"))
+                {
+                    hit.collider.gameObject.GetComponent<InteractableSystem>().canvas.gameObject.SetActive(true);
+                }
                 // 如果碰到的是可互動物件，顯示畫布
                 canvas.gameObject.SetActive(true);
 
