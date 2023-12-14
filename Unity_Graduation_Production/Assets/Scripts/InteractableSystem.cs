@@ -11,16 +11,16 @@ namespace BING
         public Canvas canvas;
 
         [SerializeField, Header("第一段對話資料")]
-        private DialogueData dataDialogue;
+        public  DialogueData dataDialogue;
         [SerializeField, Header("對話結束後的事件")]
-        private UnityEvent onDialogueFinish;            // Unity 事件
+        public UnityEvent onDialogueFinish;            // Unity 事件
 
         [SerializeField, Header("啟動道具")]
-        private GameObject propActive;
+        public GameObject propActive;
         [SerializeField, Header("啟動後的對話資料")]
-        private DialogueData dataDialogueActive;
+        public DialogueData dataDialogueActive;
         [SerializeField, Header("啟動後對話結束後的事件")]
-        private UnityEvent onDialogueFinishAfterActive;
+        public UnityEvent onDialogueFinishAfterActive;
 
         private string nameTarget = "PlayerCapsule";
         private DialogueSystem dialogueSystem;
