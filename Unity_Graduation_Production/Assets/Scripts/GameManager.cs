@@ -28,18 +28,22 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject pauseMenuUI; //公開一個暫停選單物件
+    public GameObject ExitMenuUI; //公開一個離開選單物件
+    public GameObject SettingsMenuUI; //公開一個設定選單物件
+    public GameObject ClassroomStoryUI; //公開一個故事物件
+
     private bool isPaused = false;
 
     void Start()
     {
         // 在遊戲開始時先隱藏暫停選單
         pauseMenuUI.SetActive(false);
+        
     }
 
-    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape )) // 設定"Esc"為暫停選單觸發按鍵
+        if (Input.GetKeyDown(KeyCode.Escape)) // 設定"Esc"為暫停選單觸發按鍵
         {
             isPaused = !isPaused;
             Time.timeScale = isPaused ? 0f : 1f; // 遊戲暫停時凍結時間
@@ -51,6 +55,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Continue() // 設定"暫停選單中的離開按鈕點選後開啟選單"
+    {
+        ExitMenuUI.SetActive(true);
+    }
+
+    public void Settings() // 設定"暫停選單中的設定按鈕點選後開啟設定選單"
+    {
+        SettingsMenuUI.SetActive(true);
+    }
+
+    public void Back() // 設定"選單中的返回按鈕點選後關閉選單並回到暫停選單"
+    {
+        pauseMenuUI.SetActive(true);
+        SettingsMenuUI.SetActive(false);
+        ExitMenuUI.SetActive(false);
+    }
+
+    public void Story() 
+    {
+        ClassroomStoryUI.SetActive(true);
+        // 觸發暫停選單後解鎖游標
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void StoryFinish() 
+    {
+        ClassroomStoryUI.SetActive(false);
+        // 點擊按鈕後鎖定游標
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     public void OnResume() //點擊繼續遊戲的執行方法
     {
         Time.timeScale = 1f;
@@ -60,4 +97,6 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    
 }
