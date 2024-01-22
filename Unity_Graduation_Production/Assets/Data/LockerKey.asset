@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: "\u5EFA\u570B"
   dialogueContents:
-  - "\u9019\u88E1\u9084\u6709\u4E00\u628A\u9470\u5319"
+  - "\u662F\u9470\u5319!!!"
   - ......
   - "\u96E3\u9053\u662F\u7F6E\u7269\u6AC3\u7684\u9470\u5319\u55CE?!"

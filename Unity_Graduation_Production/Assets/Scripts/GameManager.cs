@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public GameObject ExitMenuUI; //公開一個離開選單物件
     public GameObject SettingsMenuUI; //公開一個設定選單物件
     public GameObject ClassroomStoryUI; //公開一個故事物件
+    public GameObject HorrorDiaryUI; //公開一個嚇人圖片物件
+    public GameObject NormalDiaryUI; //公開一個劇情圖片物件
 
     private bool isPaused = false;
 
@@ -86,6 +88,30 @@ public class GameManager : MonoBehaviour
         // 點擊按鈕後鎖定游標
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void HorrorPicture()
+    {
+        HorrorDiaryUI.SetActive(true);
+        // 觸發暫停選單後解鎖游標
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void HorrorPictureFinish()
+    {
+        HorrorDiaryUI.SetActive(false);
+        // 點擊按鈕後鎖定游標
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void NormalPicture()
+    {
+        NormalDiaryUI.SetActive(true);
+        // 觸發暫停選單後解鎖游標
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void OnResume() //點擊繼續遊戲的執行方法
